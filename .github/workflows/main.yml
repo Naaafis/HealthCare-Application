@@ -7,14 +7,14 @@ on:
   push:
     branches:
       - main
-      - remotes/origin/Data_Management
-      - remotes/origin/Devices
+      - 'remotes/origin/Data_Management'
+      - 'remotes/origin/Devices'
       
   pull_request:
     branches: 
       - main
-      - remotes/origin/Data_Management
-      - remotes/origin/Devices
+      - 'remotes/origin/Data_Management'
+      - 'remotes/origin/Devices'
     
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
