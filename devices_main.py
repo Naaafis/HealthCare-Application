@@ -45,6 +45,7 @@ def test_package_data():
     assert testjson['d_type'] == func_dict['d_type'], "Failed to collect json device type"
     assert testjson['d'] == func_dict['d'], "Failed to collect json data"
     
+  #blah  
 #these functions exist to test the chcking functions 
 def test_check_registration():
     func_dict = rd.register_device(1, 1, "scale", "00:00:11:11", "1.1.0", "1.1.0")
