@@ -17,7 +17,7 @@ def test_register_device():
    
 #the functions arent testing for accuracy in time because it may differ by seconds
 def test_collect_data():
-    test_dict = {'p_id': 1, 'd_id': 1, d_type: "scale", d: 133}
+    test_dict = {'p_id': 1, 'd_id': 1, 'd_type': "scale", 'd': 133}
     func_dict = cd.collect_data(1, 1, "scale", 133)
     assert test_dict['u_id'] == func_dict['u_id'], "Failed to collect user ID"
     assert test_dict['d_id'] == func_dict['d_id'], "Failed to collect device ID"
@@ -28,7 +28,7 @@ def test_collect_data():
 def test_package_device_info():
     func_dict = rd.register_device(1, 1, "scale", "00:00:11:11", "1.1.0", "1.1.0")
     jsonpack = rd.package_device_info(func_dict)
-    testjson = json.dumps(jsonpack)
+    testjson = json.loads(jsonpack)
     assert testjson['u_id'] == func_dict['u_id'], "Failed to register json user ID"
     assert testjson['d_id'] == func_dict['d_id'], "Failed to register json device ID"
     assert testjson['d_type'] == func_dict['d_type'], "Failed to register json device type"
@@ -39,7 +39,7 @@ def test_package_device_info():
 def test_package_data():
     func_dict = cd.collect_data(1, 1, "scale", 133)
     jsonpack = cd.package_data(func_dict)
-    testjson = json.dumps(jsonpack)
+    testjson = json.loads(jsonpack)
     assert testjson['u_id'] == func_dict['u_id'], "Failed to collect json user ID"
     assert testjson['d_id'] == func_dict['d_id'], "Failed to collect json device ID"
     assert testjson['d_type'] == func_dict['d_type'], "Failed to collect json device type"
