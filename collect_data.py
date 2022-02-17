@@ -1,5 +1,5 @@
 #this is a function to collect data, check which device the data came from, and output a json file to be uploaded to the database
-
+import json
 
 def collect_data(patient_id, device_id, device_type, data):
     #this function simply takes all the metrics for collecting data and returns a dictionary 

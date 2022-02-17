@@ -1,4 +1,5 @@
 #this function exists to register a new device to a user and verify the registration information
+import json
 
 
 #this is a function for an administratice user to add a device to the system
