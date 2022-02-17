@@ -19,7 +19,7 @@ def test_register_device():
 def test_collect_data():
     test_dict = {'p_id': 1, 'd_id': 1, 'd_type': "scale", 'd': 133}
     func_dict = cd.collect_data(1, 1, "scale", 133)
-    assert test_dict['u_id'] == func_dict['u_id'], "Failed to collect user ID"
+    assert test_dict['p_id'] == func_dict['p_id'], "Failed to collect user ID"
     assert test_dict['d_id'] == func_dict['d_id'], "Failed to collect device ID"
     assert test_dict['d_type'] == func_dict['d_type'], "Failed to collect device type"
     assert test_dict['d'] == func_dict['d'], "Failed to collect data"
@@ -40,7 +40,7 @@ def test_package_data():
     func_dict = cd.collect_data(1, 1, "scale", 133)
     jsonpack = cd.package_data(func_dict)
     testjson = json.loads(jsonpack)
-    assert testjson['u_id'] == func_dict['u_id'], "Failed to collect json user ID"
+    assert testjson['p_id'] == func_dict['p_id'], "Failed to collect json user ID"
     assert testjson['d_id'] == func_dict['d_id'], "Failed to collect json device ID"
     assert testjson['d_type'] == func_dict['d_type'], "Failed to collect json device type"
     assert testjson['d'] == func_dict['d'], "Failed to collect json data"
