@@ -37,11 +37,11 @@ def check_registration(inp):
         print("Please provide string indicating the device mac address")
         return False
     
-    if not isinstance(firmware_v, int):
+    if not isinstance(firmware_v, str):
         print("Please provide an integer indicating the firmware version")
         return False
     
-    if not isinstance(software_v, int):
+    if not isinstance(software_v, str):
         print("Please provide an integer indicating the software version")
         return False
     

@@ -5,8 +5,8 @@ import codecs
 
 #this function exists to test that the data collection and device registration metrics work properly
 def test_register_device():
-    test_dict = {'u_id': 1, 'd_id': 1, 'd_type': "scale", 'd_mac': "00:00:11:11", 'd_firmware_v': 1.1.0, 'd_software_v': 1.1.0}
-    func_dict = rd.register_device(1, 1, "scale", "00:00:11:11", 1.1.0, 1.1.0)
+    test_dict = {'u_id': 1, 'd_id': 1, 'd_type': "scale", 'd_mac': "00:00:11:11", 'd_firmware_v': "1.1.0", 'd_software_v': "1.1.0"}
+    func_dict = rd.register_device(1, 1, "scale", "00:00:11:11", "1.1.0", "1.1.0")
     assert test_dict['u_id'] == func_dict['u_id'], "Failed to register user ID"
     assert test_dict['d_id'] == func_dict['d_id'], "Failed to register device ID"
     assert test_dict['d_type'] == func_dict['d_type'], "Failed to register device type"
@@ -25,7 +25,7 @@ def test_collect_data():
     
 #these functions exist to check that json collectin works properly
 def test_package_device_info():
-    func_dict = rd.register_device(1, 1, "scale", "00:00:11:11", 1.1.0, 1.1.0)
+    func_dict = rd.register_device(1, 1, "scale", "00:00:11:11", "1.1.0", "1.1.0")
     jsonpack = rd.package_device_info(func_dict)
     testjson = json.dumps(jsonpack)
     assert testjson['u_id'] == func_dict['u_id'], "Failed to register json user ID"
@@ -46,28 +46,28 @@ def test_package_data():
     
 #these functions exist to test the chcking functions 
 def test_check_registration():
-    func_dict = rd.register_device(1, 1, "scale", "00:00:11:11", 1.1.0, 1.1.0)
+    func_dict = rd.register_device(1, 1, "scale", "00:00:11:11", "1.1.0", "1.1.0")
     test = rd.check_registration(func_dict)
     assert test == True, "Failed to check registration"
-    func_dict = rd.register_device("001", 1, "scale", "00:00:11:11", 1.1.0, 1.1.0)
+    func_dict = rd.register_device("001", 1, "scale", "00:00:11:11", "1.1.0", "1.1.0")
     test = rd.check_registration(func_dict)
     assert test == False, "Failed to check registration"
-    func_dict = rd.register_device(1, "001", "scale", "00:00:11:11", 1.1.0, 1.1.0)
+    func_dict = rd.register_device(1, "001", "scale", "00:00:11:11", "1.1.0", "1.1.0")
     test = rd.check_registration(func_dict)
     assert test == False, "Failed to check registration"
-    func_dict = rd.register_device(1, 1, 133, "00:00:11:11", 1.1.0, 1.1.0)
+    func_dict = rd.register_device(1, 1, 133, "00:00:11:11", "1.1.0", "1.1.0")
     test = rd.check_registration(func_dict)
     assert test == False, "Failed to check registration"
-    func_dict = rd.register_device(1, 1, "dollar", "00:00:11:11", 1.1.0, 1.1.0)
+    func_dict = rd.register_device(1, 1, "dollar", "00:00:11:11", "1.1.0", "1.1.0")
     test = rd.check_registration(func_dict)
     assert test == False, "Failed to check registration"
-    func_dict = rd.register_device(1, 1, "scale", 00:00:11:11, 1.1.0, 1.1.0)
+    func_dict = rd.register_device(1, 1, "scale", 11, "1.1.0", "1.1.0")
     test = rd.check_registration(func_dict)
     assert test == False, "Failed to check registration"
-    func_dict = rd.register_device(1, 1, "scale", "00:00:11:11", "1.1.0", 1.1.0)
+    func_dict = rd.register_device(1, 1, "scale", "00:00:11:11", 1, "1.1.0")
     test = rd.check_registration(func_dict)
     assert test == False, "Failed to check registration"
-    func_dict = rd.register_device(1, 1, "scale", "00:00:11:11", 1.1.0, "1.1.0")
+    func_dict = rd.register_device(1, 1, "scale", "00:00:11:11", "1.1.0", 1)
     test = rd.check_registration(func_dict)
     assert test == False, "Failed to check registration"
     
