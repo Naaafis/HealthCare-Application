@@ -1,14 +1,11 @@
 import register_device as rd
 import collect_data as cd 
-from datetime import datetime
 import codecs
 #import logging
 
 #this function exists to test that the data collection and device registration metrics work properly
 def test_register_device():
-    now = datetime.now()
-    current_time = now.strftime("%H:%M:%S")
-    test_dict = {'u_id': 001, 'd_id': 001, 'd_type': "scale", 'd_mac': "00:00:11:11", 'd_firmware_v': 1.1.0, 'd_software_v': 1.1.0, 'registered_time': current_time}
+    test_dict = {'u_id': 001, 'd_id': 001, 'd_type': "scale", 'd_mac': "00:00:11:11", 'd_firmware_v': 1.1.0, 'd_software_v': 1.1.0}
     func_dict = rd.register_device(001, 001, "scale", "00:00:11:11", 1.1.0, 1.1.0)
     assert test_dict['u_id'] == func_dict['u_id'], "Failed to register user ID"
     assert test_dict['d_id'] == func_dict['d_id'], "Failed to register device ID"
@@ -19,9 +16,7 @@ def test_register_device():
    
 #the functions arent testing for accuracy in time because it may differ by seconds
 def test_collect_data():
-    now = datetime.now()
-    current_time = now.strftime("%H:%M:%S")
-    test_dict = {'p_id': 001, 'd_id': 001, d_type: "scale", d: 133, 'time': current_time}
+    test_dict = {'p_id': 001, 'd_id': 001, d_type: "scale", d: 133}
     func_dict = cd.collect_data(001, 001, "scale", 133)
     assert test_dict['u_id'] == func_dict['u_id'], "Failed to collect user ID"
     assert test_dict['d_id'] == func_dict['d_id'], "Failed to collect device ID"

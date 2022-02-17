@@ -1,12 +1,12 @@
 #this function exists to register a new device to a user and verify the registration information
-from datetime import datetime 
+
 
 #this is a function for an administratice user to add a device to the system
 def register_device(user_id, device_id, device_type, device_mac, firmware_v, software_v):
     #creare a data structure to take in all user information and output a dictionary of the information
-    now = datetime.now()
-    current_time = now.strftime("%H:%M:%S")
-    Dict = {'u_id': user_id, 'd_id': device_id, 'd_type': device_type, 'd_mac': device_mac, 'd_firmware_v': firmware_v, 'd_software_v': software_v, 'registered_time': current_time}
+    # now = datetime.now()
+    # current_time = now.strftime("%H:%M:%S")
+    Dict = {'u_id': user_id, 'd_id': device_id, 'd_type': device_type, 'd_mac': device_mac, 'd_firmware_v': firmware_v, 'd_software_v': software_v}
     return Dict
 
 def check_registration(inp):

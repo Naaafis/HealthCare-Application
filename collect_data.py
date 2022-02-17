@@ -1,11 +1,11 @@
 #this is a function to collect data, check which device the data came from, and output a json file to be uploaded to the database
-from datetime import datetime 
+
 
 def collect_data(patient_id, device_id, device_type, data):
     #this function simply takes all the metrics for collecting data and returns a dictionary 
-    now = datetime.now()
-    current_time = now.strftime("%H:%M:%S")
-    Dict = {'p_id': patient_id, 'd_id': device_id, 'd_type': device_type, 'd': data, 'time': current_time}
+    # now = datetime.now()
+    # current_time = now.strftime("%H:%M:%S")
+    Dict = {'p_id': patient_id, 'd_id': device_id, 'd_type': device_type, 'd': data}
     return Dict
 
 def check_collected_data(inp):  
