@@ -36,7 +36,7 @@ def check_collected_data(inp):
         return False
 
     ##sphygmomanometer measures blood pressure
-    if(device_type != "thermostat" && device_type != "sphygmomanometer" && device_type != "heart rate monitor" && device_type != "oximeter" && device_type != "glucometer" && device_type != "scale"):
+    if device_type != "thermostat" and device_type != "sphygmomanometer" and device_type != "heart rate monitor" and device_type != "oximeter" and device_type != "glucometer" and device_type != "scale":
         #no need to raise error since we are pytesting 
         print("please provide valid type of device")
         return False
