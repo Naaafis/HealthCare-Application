@@ -1,11 +1,13 @@
 # This workflow will install Python dependencies, run tests and lint with a variety of Python versions
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-python-with-github-actions
 
-name: CI
+name: Devices CI
 
 on:
   push:
+    branches: [ Devices ]
   pull_request:
+    branches: [ Devices ]
     
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -34,13 +36,13 @@ jobs:
     - name: Lint with flake8
       run: |
         # stop the build if there are Python syntax errors or undefined names
-        flake8 . --count --extend-ignore=W,E1,E2,E3,E5,F821 --select=E9,F63,F7 --show-source --statistics
+        flake8 . --count --extend-ignore=W,E1,E2,E3,E5,F821,E999 --select=E9,F63,F7 --show-source --statistics
         # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
-#     - name: Test with pytest
-#       run: |
-#         pytest main.py
-#     - name: Run Coverage
-#       run: |
-#         coverage run -m pytest main.py
-#         coverage report 
+    - name: Test with pytest
+      run: |
+        pytest devices_main.py
+    - name: Run Coverage
+      run: |
+        coverage run -m pytest devices_main.py
+        coverage report 
