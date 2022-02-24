@@ -44,5 +44,5 @@ jobs:
         pytest devices_main.py
     - name: Run Coverage
       run: |
-        coverage run -m pytest devices_main.py
+        coverage run -m pytest unit_tests_devices.py
         coverage report 
