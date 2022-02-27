@@ -28,11 +28,12 @@ class User(models.Model):
 class Data_Collection(models.Model):
     user_id = models.ForeignKey(User, on_delete=models.CASCADE)
     device_id = models.ForeignKey(Device, on_delete=models.CASCADE)
-    device_type = models.CharField(max_length=255)
+    #device_type = models.CharField(max_length=255)
+    collection_reason = models.CharField(max_length=255)
     data_collected = models.IntegerField()
     time_collected = models.DateTimeField('Date Collected')
     def __str__(self):
-        return (self.user_name, self.time_collected)
+        return self.collection_reason
     def was_published_recently(self):
         return self.pub_date >= timezone.now() - datetime.timedelta(days=1)
     
