@@ -79,6 +79,8 @@ Devices API
 
 To use:
 
+#note, not using AWS to host API because I used up my free account for Senior design project 
+
 1. cd to device-flask-project directory and run the following command: 
   pip install pipenv
   pip install -r requirements.txt
@@ -87,7 +89,9 @@ To use:
   ./bootstrap.sh
   *take note of url running the API
 
-2. cd .. back to devices directory and run the following command:
+2. open a new terminal
+
+3. cd .. back to devices directory and run the following command:
   nano ask_input.py
     on line 33 replace the url with the url noted above where API is running 
   run ctrl 'O' then ctrl 'X'
