@@ -48,11 +48,10 @@ Users Table Content:
 
 
 Device Table Content:
-- Device name
+- Device type
 - Device ID
 - Device MAC Addr
 - User it belongs to ID
-- User it was assigned by ID
 - Firmware version
 - Software version
 - Date of Purchase/start use
@@ -60,7 +59,7 @@ Device Table Content:
 
 Device Data table:
 - User_ID + Device ID
-- Data collected time
+- Device type
 - Data 
 
 Supplmentary tables:
@@ -73,3 +72,24 @@ Role_Definition:
 - Role_ID
 - Role_Catagory
 - Role_permissions
+
+
+------------------------------------------------------------------------------------------------
+Devices API
+
+To use:
+
+1. cd to device-flask-project directory and run the following command: 
+  pip install pipenv
+  pip install -r requirements.txt
+  pipenv --three
+  pipenv install flask
+  ./bootstrap.sh
+  *take note of url running the API
+
+2. cd .. back to devices directory and run the following command:
+  nano ask_input.py
+    on line 33 replace the url with the url noted above where API is running 
+  run ctrl 'O' then ctrl 'X'
+  run python ask_input.py 
+  test with any inputs you like
