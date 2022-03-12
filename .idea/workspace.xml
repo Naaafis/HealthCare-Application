@@ -5,11 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="32473ee6-982c-4bd5-afc6-6ad35965ce88" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/cc06855e-bdf8-4bc1-bc9e-fdbe00410445.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/cc06855e-bdf8-4bc1-bc9e-fdbe00410445/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/cc06855e-bdf8-4bc1-bc9e-fdbe00410445/storage_v2/_src_/schema/mysql.osA4Bg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/cc06855e-bdf8-4bc1-bc9e-fdbe00410445/storage_v2/_src_/schema/performance_schema.kIw0nw.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/cc06855e-bdf8-4bc1-bc9e-fdbe00410445/storage_v2/_src_/schema/sys.zb4BAA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/device-flask-project/deviceAPI/index.py" beforeDir="false" afterPath="$PROJECT_DIR$/device-flask-project/deviceAPI/index.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -17,31 +17,31 @@ def check_collected_data(inp):
 
     if not isinstance(patient_id, int):
         #no need to raise error since we are pytesting 
-        print("Please provide an integer indicating the id of a patient")
-        return False
+        #print("Please provide an integer indicating the id of a patient")
+        return "Please provide an integer indicating the id of a patient"
 
     if not isinstance(device_id, int):
         #no need to raise error since we are pytesting 
-        print("Please provide an integer indicating the id of a device")
-        return False
+        #print("Please provide an integer indicating the id of a device")
+        return "Please provide an integer indicating the id of a device"
 
     if not isinstance(device_type, str):
         #no need to raise error since we are pytesting 
-        print("Please provide string indicating the type of a device")
-        return False
+        #print("Please provide string indicating the type of a device")
+        return "Please provide string indicating the type of a device"
 
     if not isinstance(data, int):
         #no need to raise error since we are pytesting 
-        print("Please provide an integer indicating the data")
-        return False
+        #print("Please provide an integer indicating the data")
+        return "Please provide an integer indicating the data"
 
     ##sphygmomanometer measures blood pressure
     if device_type != "thermostat" and device_type != "sphygmomanometer" and device_type != "heart rate monitor" and device_type != "oximeter" and device_type != "glucometer" and device_type != "scale":
         #no need to raise error since we are pytesting 
-        print("please provide valid type of device")
-        return False
+        #print("please provide valid type of device")
+        return "Please provide valid type of device"
     
-    return True
+    return "Valid Entry"
 
 def package_data(inp):
     packet = json.dumps(inp)

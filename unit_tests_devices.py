@@ -50,47 +50,47 @@ def test_package_data():
 def test_check_registration():
     func_dict = rd.register_device(1, 1, "scale", "00:00:11:11", "1.1.0", "1.1.0")
     test = rd.check_registration(func_dict)
-    assert test == True, "Failed to check registration"
+    assert test == "Valid Entry", "Failed to check registration"
     func_dict = rd.register_device("001", 1, "scale", "00:00:11:11", "1.1.0", "1.1.0")
     test = rd.check_registration(func_dict)
-    assert test == False, "Failed to check registration"
+    assert test == "Please provide an integer indicating the id of a user", "Failed to check registration"
     func_dict = rd.register_device(1, "001", "scale", "00:00:11:11", "1.1.0", "1.1.0")
     test = rd.check_registration(func_dict)
-    assert test == False, "Failed to check registration"
+    assert test == "Please provide an integer indicating the id of a device", "Failed to check registration"
     func_dict = rd.register_device(1, 1, 133, "00:00:11:11", "1.1.0", "1.1.0")
     test = rd.check_registration(func_dict)
-    assert test == False, "Failed to check registration"
+    assert test == "Please provide a string indicating the type of a device", "Failed to check registration"
     func_dict = rd.register_device(1, 1, "dollar", "00:00:11:11", "1.1.0", "1.1.0")
     test = rd.check_registration(func_dict)
-    assert test == False, "Failed to check registration"
+    assert test == "Please provide valid type of device", "Failed to check registration"
     func_dict = rd.register_device(1, 1, "scale", 11, "1.1.0", "1.1.0")
     test = rd.check_registration(func_dict)
-    assert test == False, "Failed to check registration"
+    assert test == "Please provide string indicating the device mac address", "Failed to check registration"
     func_dict = rd.register_device(1, 1, "scale", "00:00:11:11", 1, "1.1.0")
     test = rd.check_registration(func_dict)
-    assert test == False, "Failed to check registration"
+    assert test == "Please provide an integer indicating the firmware version", "Failed to check registration"
     func_dict = rd.register_device(1, 1, "scale", "00:00:11:11", "1.1.0", 1)
     test = rd.check_registration(func_dict)
-    assert test == False, "Failed to check registration"
+    assert test == "Please provide an integer indicating the software version", "Failed to check registration"
     
 def test_check_collected_data():
     func_dict = cd.collect_data(1, 1, "scale", 133)
     test = cd.check_collected_data(func_dict)
-    assert test == True, "Failed to check collected data"
+    assert test == "Valid Entry", "Failed to check collected data"
     func_dict = cd.collect_data("001", 1, "scale", 133)
     test = cd.check_collected_data(func_dict)
-    assert test == False, "Failed to check collected data"
+    assert test == "Please provide an integer indicating the id of a patient", "Failed to check collected data"
     func_dict = cd.collect_data(1, "001", "scale", 133)
     test = cd.check_collected_data(func_dict)
-    assert test == False, "Failed to check collected data"
+    assert test == "Please provide an integer indicating the id of a device", "Failed to check collected data"
     func_dict = cd.collect_data(1, 1, "haha", 133)
     test = cd.check_collected_data(func_dict)
-    assert test == False, "Failed to check collected data"
+    assert test == "Please provide valid type of device", "Failed to check collected data"
     func_dict = cd.collect_data(1, 1, 133, 133)
     test = cd.check_collected_data(func_dict)
-    assert test == False, "Failed to check collected data"
+    assert test == "Please provide string indicating the type of a device", "Failed to check collected data"
     func_dict = cd.collect_data(1, 1, "scale", "133")
     test = cd.check_collected_data(func_dict)
-    assert test == False, "Failed to check collected data"
+    assert test == "Please provide an integer indicating the data", "Failed to check collected data"
     
 #not creating main function for now

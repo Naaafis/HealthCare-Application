@@ -20,39 +20,39 @@ def check_registration(inp):
     
     if not isinstance(user_id, int):
         #no need to raise error since we are pytesting 
-        print("Please provide an integer indicating the id of a user")
-        return False
+        #print("Please provide an integer indicating the id of a user")
+        return "Please provide an integer indicating the id of a user"
 
     if not isinstance(device_id, int):
         #no need to raise error since we are pytesting 
-        print("Please provide an integer indicating the id of a device")
-        return False
+        #print("Please provide an integer indicating the id of a device")
+        return "Please provide an integer indicating the id of a device"
 
     if not isinstance(device_type, str):
         #no need to raise error since we are pytesting 
-        print("Please provide a string indicating the type of a device")
-        return False
+        #print("Please provide a string indicating the type of a device")
+        return "Please provide a string indicating the type of a device"
 
     if not isinstance(device_mac, str):
         #no need to raise error since we are pytesting 
-        print("Please provide string indicating the device mac address")
-        return False
+        #print("Please provide string indicating the device mac address")
+        return "Please provide string indicating the device mac address"
     
     if not isinstance(firmware_v, str):
-        print("Please provide an integer indicating the firmware version")
-        return False
+        #print("Please provide an integer indicating the firmware version")
+        return "Please provide an integer indicating the firmware version"
     
     if not isinstance(software_v, str):
-        print("Please provide an integer indicating the software version")
-        return False
+        #print("Please provide an integer indicating the software version")
+        return "Please provide an integer indicating the software version"
     
     #sphygmomanometer measures blood pressure
     if device_type != "thermostat" and device_type != "sphygmomanometer" and device_type != "heart rate monitor" and device_type != "oximeter" and device_type != "glucometer" and device_type != "scale":
         #no need to raise error since we are pytesting 
-        print("please provide valid type of device")
-        return False
+        #print("please provide valid type of device")
+        return "Please provide valid type of device"
     
-    return True
+    return "Valid Entry"
     
 def package_device_info(inp):
     packet = json.dumps(inp)
