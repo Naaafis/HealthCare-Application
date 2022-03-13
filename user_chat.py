@@ -19,7 +19,7 @@ def check_message(inp):
         #tell user to enter valid id for recipient
         return "Please provide a string for the name of the sender"
     
-    if not isinstance(device_type, str):
+    if not isinstance(message, str):
         #tell user to reenter a valid message type
         return "Please provide string for the message body"
     
