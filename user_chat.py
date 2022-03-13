@@ -2,7 +2,7 @@
 def send_message(sender_name, recipient_name, message): 
     #this funciton exists to return a tuple with the sender and recipient as part of the same key 
     #typically this would also need to have a timestamp, but we will use data base for that function
-    Dict = {sender: sender_name, recipient: recipient_name, message: message}
+    Dict = {'sender': sender_name, 'recipient': recipient_name, 'message': message}
     return Dict
 
 def check_message(inp): 
