@@ -1,0 +1,30 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+attrs = "==21.4.0"
+coverage = "==6.3"
+cycler = "==0.11.0"
+flake8 = "==4.0.1"
+fonttools = "==4.29.0"
+iniconfig = "==1.1.1"
+kiwisolver = "==1.3.2"
+mccabe = "==0.6.1"
+pluggy = "==1.0.0"
+py = "==1.11.0"
+pycodestyle = "==2.8.0"
+pyflakes = "==2.4.0"
+pyparsing = "==3.0.7"
+pytest = "==6.2.5"
+python-dateutil = "==2.8.2"
+six = "==1.16.0"
+toml = "==0.10.2"
+Pillow = "==9.0.0"
+flask = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.9"
