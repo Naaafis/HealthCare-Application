@@ -31,7 +31,6 @@ Users Table Content:
   - Allergy
 
 
-
 Device Table Content:
 - Device name
 - Device ID
@@ -58,3 +57,9 @@ Role_Definition:
 - Role_ID
 - Role_Catagory
 - Role_permissions
+
+Chat Tables: 
+- Senders and Recipients have unique IDs that will be unified to search for messages
+- Messages and message IDs 
+
+
