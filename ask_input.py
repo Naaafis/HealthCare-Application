@@ -30,7 +30,7 @@ def ask_collection_info():
     return packaged
     
 def main():
-    url = "http://192.168.1.166:5000/"
+    url = "http://54.66.50.61:5000/"
 
     while(1):
         t = input("enter 'r' for registration and 'c' for data collection, 'vr' to view registrations and 'vc' to view data collections: ")

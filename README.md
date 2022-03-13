@@ -77,23 +77,14 @@ Role_Definition:
 ------------------------------------------------------------------------------------------------
 Devices API
 
+API is capable of uploading devices to a temporary databse and is currently hosted on AWS ec2 t2.micro instance
+Functionalities involve being able to register a device, and being able to enter data for devices 
+Error checks involve checking for all data types as well as checking that the correct device types are entered 
+API also allows users to view all data that has been entered by far
+Contact developer to reset data set with device and data information
+
 To use:
-
-#note, not using AWS to host API because I used up my free account for Senior design project 
-
-1. cd to device-flask-project directory and run the following command: 
-  pip install pipenv
-  pip install -r requirements.txt
-  pipenv --three
-  pipenv install flask
-  ./bootstrap.sh
-  *take note of url running the API
-
-2. open a new terminal
-
-3. cd .. back to devices directory and run the following command:
-  nano ask_input.py
-    on line 33 replace the url with the url noted above where API is running 
-  run ctrl 'O' then ctrl 'X'
-  run python ask_input.py 
-  test with any inputs you like
+  git clone this project and git checkout Devices
+  cd to device-flask-project directory and run the following command:
+  python ask_input.py 
+    test with any inputs you like
