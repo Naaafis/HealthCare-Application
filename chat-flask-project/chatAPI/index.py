@@ -4,6 +4,7 @@ import pymongo
 from pymongo import MongoClient #Needed for compatibility with MongoDB
 # pprint library is used to make the output look more pretty
 from pprint import pprint
+import datetime
 
 from flask import Flask, jsonify, request
 app = Flask(__name__)
@@ -57,7 +58,8 @@ def add_device():
     new_message = request.get_json()
     if check_message(new_message) == "Valid Message":
         message_collection.append(request.get_json())
-        inserting_m = {'users': ''.join(sorted(new_message['sender']+new_message['recipient'])), 'sender': new_message['sender'], 'recipient': new_message['recipient'], 'message': new_message['message']}
+        datetime_object = datetime.datetime.now()
+        inserting_m = {'users': ''.join(sorted(new_message['sender']+new_message['recipient'])), 'sender': new_message['sender'], 'recipient': new_message['recipient'], 'message': new_message['message'], 'timestamp': datetime_object}
         result = col.insert_one(inserting_m)
         print('Created {0}'.format(result.inserted_id))
         return check_message(new_message)
