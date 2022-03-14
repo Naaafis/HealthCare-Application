@@ -100,7 +100,7 @@ To Deploy API:
 ------------------------------------------------------------------------------------------------
 
 To use:
-  git clone this project and git checkout Devices
-  cd to device-flask-project directory and run the following command:
-  python ask_input.py 
-    test with any inputs you like
+  - git clone this project and git checkout Devices
+  - cd to device-flask-project directory and run the following command:
+  - python ask_input.py 
+  - test with any inputs you like
