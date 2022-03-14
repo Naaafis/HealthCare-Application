@@ -11,9 +11,9 @@ app = Flask(__name__)
 
 ########################################################################
 #connect to mongo client 
-client = MongoClient("mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+1.2.3")
+client = MongoClient("mongodb+srv://cheffb:mongodbuser@cluster0.4uqdj.mongodb.net")
 #currently the client link refers to localhost mongodb
-db = client["test"]
+db = client["chat"]
 col = db["messages"]
 
 ########################################################################

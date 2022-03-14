@@ -23,7 +23,7 @@ six = "==1.16.0"
 toml = "==0.10.2"
 Pillow = "==9.0.0"
 flask = "*"
-pymongo = "*"
+pymongo = {extras = ["srv"], version = "*"}
 
 [dev-packages]
 
