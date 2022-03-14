@@ -109,3 +109,4 @@ On MacOS:
 brew services start mongodb-community@5.0
 mongosh
 
+I will personally deploy a database for the purposes of testing
