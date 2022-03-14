@@ -89,8 +89,8 @@ take note of the http link running the API
 use POST calls along with the following parameters for json requests to send messages:
 {sender: *string*, recipient: *string*, message: *string*}
 
-
-For the purposes of this application, I will deploy the API myself on an EC2 instance
+use GET calls along with the following parameters for viewing messages: 
+{sender: *string*, recipient: *string*}
 
 ------------------------------------------------------------------------------------------------
 Database for Chat decision purposes:
@@ -115,3 +115,13 @@ mongosh
 I will personally deploy a database for the purposes of testing
 
 The credectials for my application have already been included in the index.py file in chatAPI, where my API is stored as well
+
+------------------------------------------------------------------------------------------------
+How to use APP:
+
+- git clone this repository
+- git checkout chat
+- follow steps to deploy API and take note of which URL is running the API 
+- on Line 19 of ask_message_input.py, replace url with above 
+- python ask_message_input.py
+- test with any inputs and views messages, the DB to store the chat is already up
