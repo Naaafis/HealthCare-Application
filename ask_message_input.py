@@ -16,16 +16,18 @@ def ask_users():
     return packaged
 
 def main(): 
-    url = "http://192.168.1.166:5000/messages"
+    url = "http://192.168.1.166:5000/"
     
     while(1):
         t = input("enter 's' to send a message and 'v' to view messages: ")
         if t == 's':
+            url = url + "messages"
             m = ask_message_info()
             req = requests.post(url, json=m)
             print(req.text)
             
         if t == 'v': 
+            url = url + "messages"
             u = ask_users()
             req = requests.get(url, json=u)
             print(req.text)
