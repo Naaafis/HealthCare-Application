@@ -83,6 +83,14 @@ Error checks involve checking for all data types as well as checking that the co
 API also allows users to view all data that has been entered by far
 Contact developer to reset data set with device and data information
 
+To register a device the following parameters need to be provided: 
+user_id, device_id, device_type, device_mac, firmware_v, software_v
+
+To collect data for a device the following parameters need to be provided: 
+patient_id, device_id, device_type, data
+
+These fields need to be entered in a json format
+
 To use:
   git clone this project and git checkout Devices
   cd to device-flask-project directory and run the following command:
