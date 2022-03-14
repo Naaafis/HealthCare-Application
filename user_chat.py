@@ -5,7 +5,7 @@ def send_message(sender_name, recipient_name, message):
     Dict = {'sender': sender_name, 'recipient': recipient_name, 'message': message}
     return Dict
 
-def users(sender_name, recipient_name): #this function is just there to get user information
+def users(sender_name, recipient_name): #this function is just there to get user messages
     Dict = {'sender': sender_name, 'recipient': recipient_name}
     return Dict
 

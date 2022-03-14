@@ -64,6 +64,9 @@ Chat Tables:
 
 
 ------------------------------------------------------------------------------------------------
+ChatAPI abilities:
+API is capable of sending and viewing messages between two users. The POST calls are used to post messages with sender and recipient specified, while the id used to store messages common senders and recipients are created by combining the name of the sender and recipient and alphabetizing the combination. The GET calls require specification of 'sender' and 'recipient' in order to get a collection of all messages sent between the users. 
+
 ChatAPI use instrucitons:
 
 To deploy API, cd into chat-flask-project and run the following commands:
@@ -76,6 +79,9 @@ take note of the http link running the API
 
 use POST calls along with the following parameters for json requests to send messages:
 {sender: *string*, recipient: *string*, message: *string*}
+
+
+For the purposes of this application, I will deploy the API myself on an EC2 instance
 
 ------------------------------------------------------------------------------------------------
 Database for Chat decision purposes:
