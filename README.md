@@ -101,6 +101,8 @@ To Deploy API:
 
 To use:
   - git clone this project and git checkout Devices
-  - cd to device-flask-project directory and run the following command:
+  - follow instructions to Deploy API and take note of URL running API
+  - Replace url in line 33 of ask_input.py with above
+  - cd out of device-flask-project directory and run the following command:
   - python ask_input.py 
-  - test with any inputs you like
+  - test with any inputs you like for both viewing and registering devices and data collection, a temporary data structure is created by the API
