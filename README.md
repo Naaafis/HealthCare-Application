@@ -73,13 +73,16 @@ sender_name, recipient_name, message
 To view messages between two users the following parameters need to be specified: 
 sender_name, recipient_name
 
+
 ChatAPI use instrucitons:
 
 To deploy API, cd into chat-flask-project and run the following commands:
-pip install pipenv
-pipenv --three
-pipenv install flask
-./bootstrap.sh
+- pip install pipenv
+- pipenv --three
+- pipenv install pymongo
+- pipenv install "pymongo[srv]"
+- pipenv install flask
+- ./bootstrap.sh
 
 take note of the http link running the API
 
@@ -110,3 +113,5 @@ brew services start mongodb-community@5.0
 mongosh
 
 I will personally deploy a database for the purposes of testing
+
+The credectials for my application have already been included in the index.py file in chatAPI, where my API is stored as well
