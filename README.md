@@ -89,7 +89,15 @@ user_id, device_id, device_type, device_mac, firmware_v, software_v
 To collect data for a device the following parameters need to be provided: 
 patient_id, device_id, device_type, data
 
-These fields need to be entered in a json format
+To Deploy API:
+- cd to device-flask-project
+- pip install pipenv
+- pipenv --three
+- pipenv install flask
+- ./bootstrap.sh
+- replace url in askinput.py outside this directory with directory of where API is running
+
+------------------------------------------------------------------------------------------------
 
 To use:
   git clone this project and git checkout Devices
