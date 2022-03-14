@@ -24,4 +24,23 @@ def test_check_message():
     test = uc.check_message(func_dict)
     assert test == "Please provide string for the message body", "Failed to validate message when message is in wrong format"
     
+def test_users(): 
+    test_dict = {'sender': 'sender_name', 'recipient': 'recipient_name'}
+    func_dict = uc.users('sender_name', 'recipient_name')
+    assert test_dict['sender'] == func_dict['sender'], "Failed to compile sender name"
+    assert test_dict['recipient'] == func_dict['recipient'], "Failed to compile recipient name"
+    
+def test_check_users(): 
+    func_dict = uc.users('sender_name', 'recipient_name')
+    test = uc.check_users(func_dict)
+    assert test == "Valid Message", "Failed to validate users when all fields are valid"
+    
+    func_dict = uc.users(12, 'recipient_name')
+    test = uc.check_users(func_dict)
+    assert test == "Please provide a string for the name of the sender", "Failed to validate users when sender_name is in wrong format"
+    
+    func_dict = uc.users('sender_name', 12)
+    test = uc.check_users(func_dict)
+    assert test == "Please provide a string for the name of the recipient", "Failed to validate users when recipient_name is in wrong format"
+    
     
