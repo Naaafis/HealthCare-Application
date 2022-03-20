@@ -77,7 +77,7 @@ The process of running redis server on macbooks:
 Below is examples of me sending multiple requests to the API server, and the API server utilizes a queue hosted by a redis brocker to asynchronously handle all the requests in the background. Thats why the responses are served instantly even though the requests are all sent at the same time. The tasks are asynchronously handled in the background. To check the speed, go to the ip address where the API is running and after the "/" add "/task?n=N" where you replace "N" with any number to differentiate between requests. You will see the responses are served instantly even tough the tasks have a 2 second delay.
 
 Incoming API requests:
-![Image](./images/sending_requests)
+![Image](./images/sending_requests.png)
 
 Redis Queue Worker handling jobs and assinging IDs:
-![Image](./images/handling_requests)
+![Image](./images/handling_requests.png)
