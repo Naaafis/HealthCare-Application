@@ -1,4 +1,6 @@
 #Source: https://pythonise.com/series/learning-flask/flask-rq-task-queue
+#installs for EC2 AMAZON LINUX: https://shawn-shi.medium.com/how-to-install-redis-on-ec2-server-for-fast-in-memory-database-f30c3ef8c35e
+
 
 from flask import Flask, request
 import redis 
@@ -15,7 +17,7 @@ def background_task(n):
 
     """ Function that returns len(n) and simulates a delay """
 
-    delay = 2
+    delay = 100
 
     print("Task running")
     print(f"Simulating a {delay} second delay")
