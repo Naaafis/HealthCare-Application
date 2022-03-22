@@ -76,6 +76,9 @@ The process of running redis server on macbooks:
 
 Below is examples of me sending multiple requests to the API server, and the API server utilizes a queue hosted by a redis brocker to asynchronously handle all the requests in the background. Thats why the responses are served instantly even though the requests are all sent at the same time. The tasks are asynchronously handled in the background. To check the speed, go to the ip address where the API is running and after the "/" add "/task?n=N" where you replace "N" with any number to differentiate between requests. You will see the responses are served instantly even tough the tasks have a 2 second delay.
 
+How many processes can be handled at the same time?
+- However many workers I inialize to handle tasks, which is of course CPU and Memory Bound. This is handled in line 13,14 and 37 of index.py. In stead of viweing the queues with "rq worker", I would have to personally create Worker threads in the code, and the Queue that is displayed below would exist for each individual worker. The enqueing process would be running inside a while loop that consistently adds jobs to the queue of the smallest size, or use a tie breaker when there are multiple with the same sized queue. This process will be implemented when voice transcriber module is being completed. For now I have a working queue able to handle tasks as they come in one at a time. The simultaneous section still requires more work. 
+
 Incoming API requests:
 ![Image](./images/sending_requests.png)
 
