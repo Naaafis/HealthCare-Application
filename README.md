@@ -13,7 +13,7 @@ Branching Strategy:
 - Application: Branch for development of application interface. Connects development progress of all other branches. 
 
 
------------------------------------- Product Description ------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------
 
 Platform to monitor patients at home or in the hospitals
 
